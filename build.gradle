@@ -1,0 +1,25 @@
+// Apply the necessary plugins for the project
+plugins {
+    id 'java' // Apply the Java plugin for Java project configuration
+    id 'org.springframework.boot' version '2.2.2.RELEASE' // Apply Spring Boot plugin for Spring Boot support
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE' // Apply Spring's dependency management plugin for better dependency control
+}
+
+// Set the group ID and version for the artifact produced by this project
+group 'com.example' // Define the group identifier for project
+version '1.0-SNAPSHOT' // Define the version of the project
+
+// Define the Java version compatibility
+sourceCompatibility = 1.8 // Set Java 8 as the version of Java to compile the project with
+
+// Define the repositories where dependencies can be found
+repositories {
+    mavenCentral() // Use Maven Central as the source of dependencies
+}
+
+// Define project dependencies
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web' // Core starter for building web applications including RESTful applications using Spring MVC
+    compile group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '5.2' // Logging dependency for encoding logs in logstash format
+    testCompile group: 'junit', name: 'junit', version: '4.12' // JUnit testing framework for unit tests
+}
